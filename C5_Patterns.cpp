@@ -132,5 +132,97 @@ int main(){
         cout << "\n";
     }
 
+    cout << "\n";
+
+    //P12
+    cout << "Enter a no.\n";
+    cin >>  a;
+    for (int i = 1; i <= a; i++){
+        for (int k = 1; k <= i; k++){
+            cout << " ";
+        }
+            for (int j = 1; j <= a - i + 1; j++)
+            {
+                cout << i;
+            }
+
+        cout << "\n";
+    }
+
+
+    //P13
+    cout << "Enter a no.\n";
+    cin >>  a;
+    for (int i = 1; i <= a; i++){
+        for (int l = 1; l <= a - i; l++){
+            cout << " ";
+        }
+            for (int k = 1; k <= i; k++)
+            {
+                cout << k;
+            }
+            for (int j = i-1; j >= 1; j--)
+            {
+                cout << j;
+            }
+
+        cout << "\n";
+    }
+
+
+
+    //P14
+    cout << "Enter a no.\n";
+    cin >>  a;
+    for (int i = 1; i <= a; i++){
+        for (int l = 1; l <= a - i; l++){
+            cout << " ";
+        }
+            for (int k = 1; k <= i; k++)
+            {
+                if(k == 1){
+                    cout << "*";
+                }
+                else{
+                    cout << " ";
+                }
+                
+            
+            }
+            for (int j = i-1; j >= 1; j--)
+            {
+                if(j == 1){
+                    cout << "*";
+                }
+                else{
+                    cout << " ";
+                }
+            }
+
+        cout << "\n";
+    }
+
+
+    //P15
+    cout << "Enter a no.\n";
+    cin >>  a;
+    int s;
+    for (int i = -1*(a-1); i <= a-1; i++){
+        s = abs(i);
+        for (int l = 1; l <=  s; l++){
+            cout << " ";
+        }
+       for (int k = -(a-s-1); k <= (a-s-1); k++)
+       {
+            if(k == (a-s-1) || k == (-(a-s-1))){
+                cout << "*";
+            }
+            else{
+                cout << " ";
+            } 
+        }
+        cout << "\n";
+    }
+
         return 0;
 }
