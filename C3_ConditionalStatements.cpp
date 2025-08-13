@@ -29,5 +29,8 @@ int main(){
     }
     
 
-        return 0;
+    //same can be done with ternary statements
+    cout << "\n" << ((b >= 'a' && b <= 'z') ? "lowercase" : "uppercase") << "\n";
+
+    return 0;
 }
