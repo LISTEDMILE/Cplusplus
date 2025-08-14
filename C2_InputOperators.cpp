@@ -39,6 +39,26 @@ int main(){
     // assignment operators
     //+=,=,-=
 
+    //bitwise operator
+    // & -> and
+    // | -> or
+    // ^ -> exor
+    // << -> left shift
+    // >> -> right shift
+
+
+    // // wap to check if a no. is in power of 2 (no loops)..
+    // cout << "Enter a no. : " << "\n";
+    // cin >> a;
+    // cout << (a << 1);
+    // if((a<<1) == 0){
+    
+    //     cout << a << " is in power of 2 \n";
+    // }
+    // else {
+    //     cout << a << " is not in power of 2 \n";
+    // }
+
     return 0;
 
 }
