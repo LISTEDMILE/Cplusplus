@@ -79,9 +79,9 @@ int majMVA(vector<int> nums){
     }
     if(count>nums.size()/2){
         return ans;
-    }
+    }    
     return -1;
-    
+
 }
 
 
