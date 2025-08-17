@@ -8,7 +8,7 @@ int main()
     // Brute Force...
 
     vector<int> arr = {1, 3, 4, 6};
-    vector<int> ansArr (arr.size());
+    vector<int> ansArr(arr.size());
     int ans;
     for (int i = 0; i < arr.size(); i++)
     {
@@ -27,22 +27,24 @@ int main()
         ansArr[i] = ans;
     }
 
-    for(int val: ansArr){
+    for (int val : ansArr)
+    {
         cout << val << "\t";
     }
 
-
-
     // Optimized approach with / ....
     int wholeMultiple = 1;
-    for(int val: arr){
+    for (int val : arr)
+    {
         wholeMultiple *= val;
     }
-    for (int i = 0; i < ansArr.size(); i++){
+    for (int i = 0; i < ansArr.size(); i++)
+    {
         ansArr[i] = wholeMultiple / arr[i];
     }
     cout << "\n";
-    for(int val: ansArr){
+    for (int val : ansArr)
+    {
         cout << val << "\t";
     }
 
@@ -53,19 +55,20 @@ int main()
 
     ansArr[0] = 1;
     int suffix = 1;
-    for (int i = 1; i < arr.size(); i++){
+    for (int i = 1; i < arr.size(); i++)
+    {
         ansArr[i] = ansArr[i - 1] * arr[i - 1];
     }
-    for (int i = arr.size() - 2; i >= 0; i--){
-        suffix *= arr[i+1];
+    for (int i = arr.size() - 2; i >= 0; i--)
+    {
+        suffix *= arr[i + 1];
         ansArr[i] = ansArr[i] * suffix;
-       
     }
     cout << "\n";
-    for(int val: ansArr){
+    for (int val : ansArr)
+    {
         cout << val << "\t";
     }
-    
 
-        return 0;
+    return 0;
 }
