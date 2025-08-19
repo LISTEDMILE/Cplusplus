@@ -6,8 +6,9 @@ using namespace std;
 /// in this the array first increase than decrease we have to find the peak element.....
 
 int Peak(vector <int > arr){
-    int start = 0;
-    int end = arr.size() - 1;
+    // end element can't be peek......
+    int start = 1;
+    int end = arr.size() - 2;
      while (start <= end){
         int mid = start + (end - start) / 2;
         if(arr[mid] > arr[mid+1] && arr[mid] > arr[mid-1]){
