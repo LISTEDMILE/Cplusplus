@@ -32,11 +32,13 @@ bool isValid(vector<int> books, int mid, int studentCount)
 int minOfMaxAllocation(vector<int> books, int studentCount)
 {
     int sum = 0;
+    int maxx = 0;
     for (int val : books)
     {
         sum += val;
+        maxx = max(maxx, val);
     }
-    int start = 0;
+    int start = maxx;
     int end = sum;
     int ans;
     while (start <= end)
