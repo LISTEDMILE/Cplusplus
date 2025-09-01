@@ -11,7 +11,7 @@ vector<int> InsertionSort(vector<int> arr)
         int curr = arr[i];
         int prevIndex = i - 1;
         while (arr[prevIndex] > curr && prevIndex >= 0)
-        {
+        { 
             arr[prevIndex + 1] = arr[prevIndex];
             prevIndex--;
         }
