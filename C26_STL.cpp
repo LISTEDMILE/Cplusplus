@@ -73,7 +73,21 @@ int main()
         cout << val << " ";
     }
 
-    
+    arr5.insert(arr5.begin() + 2, 100);
+    cout << "\nArr5 after insertion 100 : ";
+     for(int val:arr5){
+        cout << val << " ";
+    }
+
+    cout << "\nSize(Arr5) : " << arr5.size() << "\nCapacity(Arr5) : " << arr5.capacity();
+
+    arr5.clear();
+     cout << "\nArr5 clear : ";
+     for(int val:arr5){
+        cout << val << " ";
+    }
+
+    cout << "\nArr5 Is Empty : " << arr5.empty();
 
     return 0;
 }
