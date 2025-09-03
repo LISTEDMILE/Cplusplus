@@ -7,6 +7,8 @@ int main(){
 
     // list is like array but it is doubly linked list....
 
+    // can't access elements directly...
+
     list<int> l;
     l.push_back(1);
     l.push_back(2);

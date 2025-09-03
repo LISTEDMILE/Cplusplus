@@ -7,6 +7,8 @@ int main(){
 
     // Deque is doubly ended queue it is just dike dist but it is internally an dynamic array or vector where as list is doubly linked dist......
 
+    // can access elements directly unlike list....
+
     deque<int> d;
     d.push_back(1);
     d.push_back(2);
