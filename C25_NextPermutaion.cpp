@@ -15,11 +15,10 @@ vector<int> lexicographicalNext(vector<int> arr)
             break;
         }
     }
-    
 
     if (pivot == -1)
     {
-         reverse(arr.begin(), arr.end());
+        reverse(arr.begin(), arr.end());
         return (arr);
     }
 
@@ -33,8 +32,9 @@ vector<int> lexicographicalNext(vector<int> arr)
     }
 
     int i = pivot + 1, j = len - 1;
-    while(i<j){
-        swap(arr[i],arr[j]);
+    while (i < j)
+    {
+        swap(arr[i], arr[j]);
         i++;
         j--;
     }

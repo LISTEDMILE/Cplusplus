@@ -30,24 +30,26 @@ vector<int> optimised(vector<int> arr)
     }
 
     int idx = 0;
-    for (int i = idx; i < zero+idx; i++){
+    for (int i = idx; i < zero + idx; i++)
+    {
         arr[i] = 0;
     }
     idx = zero + idx;
 
-    for (int i = idx; i < one+idx; i++){
+    for (int i = idx; i < one + idx; i++)
+    {
         arr[i] = 1;
     }
     idx = one + idx;
 
-    for (int i = idx; i < two+idx; i++){
+    for (int i = idx; i < two + idx; i++)
+    {
         arr[i] = 2;
     }
     idx = two + idx;
 
     return arr;
 }
-
 
 // Dutch National Flag Algorithm
 // isme hm teen partition me batke karenge aur jo unsorted array hogi wo in teen se hatke mid or high ke beech me hogi...
@@ -57,18 +59,22 @@ vector<int> mostOptimised(vector<int> arr)
 
     int mid = 0;
     int low = 0;
-    int high = len-1;
+    int high = len - 1;
 
-    while(mid<=high){
-        if (arr[mid] == 0){
+    while (mid <= high)
+    {
+        if (arr[mid] == 0)
+        {
             swap(arr[low], arr[mid]);
             low++;
             mid++;
         }
-        else if(arr[mid] == 1){
+        else if (arr[mid] == 1)
+        {
             mid++;
         }
-        else{
+        else
+        {
             swap(arr[mid], arr[high]);
             high--;
         }

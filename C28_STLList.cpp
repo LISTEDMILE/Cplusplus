@@ -3,7 +3,8 @@
 #include <list>
 using namespace std;
 
-int main(){
+int main()
+{
 
     // list is like array but it is doubly linked list....
 
@@ -15,7 +16,8 @@ int main(){
     l.push_front(3);
 
     cout << "List l : ";
-    for(int val:l){
+    for (int val : l)
+    {
         cout << val << " ";
     }
 
@@ -24,7 +26,8 @@ int main(){
 
     cout
         << "\nList l after pop : ";
-    for(int val:l){
+    for (int val : l)
+    {
         cout << val << " ";
     }
 

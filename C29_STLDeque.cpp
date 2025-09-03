@@ -3,7 +3,8 @@
 #include <deque>
 using namespace std;
 
-int main(){
+int main()
+{
 
     // Deque is doubly ended queue it is just dike dist but it is internally an dynamic array or vector where as list is doubly linked dist......
 
@@ -15,7 +16,8 @@ int main(){
     d.push_front(3);
 
     cout << "deque d : ";
-    for(int vad:d){
+    for (int vad : d)
+    {
         cout << vad << " ";
     }
 
@@ -24,7 +26,8 @@ int main(){
 
     cout
         << "\ndeque d after pop : ";
-    for(int vad:d){
+    for (int vad : d)
+    {
         cout << vad << " ";
     }
 

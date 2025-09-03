@@ -2,7 +2,8 @@
 #include <stack>
 using namespace std;
 
-int main(){
+int main()
+{
 
     // LIFO
     stack<int> s;
@@ -20,7 +21,6 @@ int main(){
 
     stack<int> s2;
     s2.swap(s);
-     
 
     return 0;
 }
