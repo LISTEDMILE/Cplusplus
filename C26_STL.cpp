@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <iterator>
 using namespace std;
 
 int main()
@@ -54,40 +55,56 @@ int main()
 
     vector<int> arr5 = {1, 2, 3, 4, 5, 6};
     cout << "\nArr5 : ";
-    for(int val:arr5){
+    for (int val : arr5)
+    {
         cout << val << " ";
     }
 
-    //erase one element remove one element..
+    // erase one element remove one element..
     arr5.erase(arr5.begin());
 
     cout << "\nArr5 after removing first : ";
-    for(int val:arr5){
+    for (int val : arr5)
+    {
         cout << val << " ";
     }
 
     // erase a seq by entering start and end of deletion....
     arr5.erase(arr5.begin() + 1, arr5.begin() + 3);
     cout << "\nArr5 after removing 2nd and 3rd : ";
-    for(int val:arr5){
+    for (int val : arr5)
+    {
         cout << val << " ";
     }
 
     arr5.insert(arr5.begin() + 2, 100);
     cout << "\nArr5 after insertion 100 : ";
-     for(int val:arr5){
+    for (int val : arr5)
+    {
         cout << val << " ";
     }
 
     cout << "\nSize(Arr5) : " << arr5.size() << "\nCapacity(Arr5) : " << arr5.capacity();
 
     arr5.clear();
-     cout << "\nArr5 clear : ";
-     for(int val:arr5){
+    cout << "\nArr5 clear : ";
+    for (int val : arr5)
+    {
         cout << val << " ";
     }
 
     cout << "\nArr5 Is Empty : " << arr5.empty();
+
+    arr5.push_back(1);
+    arr5.push_back(2);
+    cout << "\nArr5 : ";
+    for (int val : arr5)
+    {
+        cout << val << " ";
+    }
+    cout << "\nArr5 First element : " << *(arr5.begin());
+
+    cout << "\nArr5 Last element : " << *(arr5.end() - 1);
 
     return 0;
 }
