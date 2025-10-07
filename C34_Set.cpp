@@ -1,105 +1,40 @@
 #include <iostream>
-#include <map>
-#include <unordered_map>
+#include <set>
 using namespace std;
 
 int main()
 {
 
-    // map is used to store key value pairs....
-    map<string, int> m;
+    // used to store unique values
+    set<int> s;
 
-    // sort automatically on basis of key
-    m["one"] = 1;
-    m["two"] = 2;
-    m["three"] = 3;
+    s.insert(3);
+    s.insert(2);
+    s.insert(1);
+    s.insert(4);
+    s.insert(6);
+    s.insert(7);
+    s.insert(8);
 
-    m.insert({"four", 4});
-    m.emplace("five", 5);
-    m.emplace("five", 6);
+    s.insert(2);
+    s.insert(3);
+    s.insert(4);
 
-    for (auto p : m)
+    for (auto p : s)
     {
-        cout << "\n"
-             << p.first << " " << p.second << "\t";
+        cout << p << "\t";
     }
 
-    cout << "\nm['five'] = " << m["five"];
-    cout << "\nm.count('five') = " << m.count("five");
+    // provide element equal or just larger
+    cout << "\ns.lower_bound(3) = " << *(s.lower_bound(3));
+    cout << "\ns.lower_bound(5) = " << *(s.lower_bound(5));
+    // if no element
+    //   {unexpected error coming } cout << "\ns.lower_bound(10) = " << *(s.lower_bound(9));
 
-    // erase a entry..
-    m.erase("five");
-    if (m.find("five") != m.end())
-    {
-        cout << "\nm['five' after erase] = " << m["five"];
-    }
+    // provide element just larger...
+    cout << "\ns.upper_bound(7) = " << *(s.upper_bound(7));
 
-    //. find return true if present other wise .end() of the map ...
+    // same here multiset for allow duplicated and uordered with random ordered///......
 
-    if (m.find("one") != m.end())
-    {
-        cout << "\nm.find('one') = " << "found";
-    }
-    else
-    {
-        cout << "\nm.find('one') = " << "not found";
-    }
-    if (m.find("six") != m.end())
-    {
-        cout << "\nm.find('six') = " << "not found";
-    }
-    else
-    {
-        cout << "\nm.find('one') = " << "found";
-    }
-
-    /// to store multiple values per key == multimap
-
-    multimap<string, int> mm;
-    mm.emplace("tv", 100);
-    mm.emplace("tv", 100);
-    mm.emplace("tv", 100);
-    mm.emplace("tv", 100);
-
-    for (auto p : mm)
-    {
-        cout << endl
-             << p.first << " " << p.second;
-    }
-
-    // erase with loc..
-    cout << endl
-         << "erase(mm.find('tv'))";
-    mm.erase(mm.find("tv"));
-    for (auto p : mm)
-    {
-        cout << endl
-             << p.first << " " << p.second;
-    }
-
-    mm.erase("tv");
-
-    cout << "\nAfter erase ('tv')\n";
-    for (auto p : mm)
-    {
-        cout << endl
-             << p.first << " " << p.second;
-    }
-
-    /// unordered map
-
-    unordered_map<string, int> um;
-    um.emplace("tv", 100);
-    um.emplace("tv", 100);
-    um.emplace("tv", 100);
-    um.emplace("tv", 100);
-
-    cout << "\nAfter inserting 4 items with same key\n";
-
-    for (auto p : um)
-    {
-        cout << endl
-             << p.first << " " << p.second;
-    }
     return 0;
 }
