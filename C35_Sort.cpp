@@ -80,6 +80,7 @@ int main(){
     reverse(vec.begin(), vec.end());
     cout << "\n\n";
 
+    
     for(int val: vec){
         cout << val << "\t";
     }
