@@ -53,7 +53,7 @@ int main()
     getline(cin, thirdString);
     cout << "input String : " << thirdString << endl;
 
-     reverse(firstString.begin(), firstString.end());
-     cout << "Reverse : " << firstString << endl;
-     return 0;
+    reverse(firstString.begin(), firstString.end());
+    cout << "Reverse : " << firstString << endl;
+    return 0;
 }
