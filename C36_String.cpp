@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <algorithm>
 
 using namespace std;
 int main()
@@ -51,5 +52,8 @@ int main()
     string thirdString;
     getline(cin, thirdString);
     cout << "input String : " << thirdString << endl;
-    return 0;
+
+     reverse(firstString.begin(), firstString.end());
+     cout << "Reverse : " << firstString << endl;
+     return 0;
 }
