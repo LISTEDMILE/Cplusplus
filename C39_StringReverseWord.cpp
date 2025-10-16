@@ -2,34 +2,35 @@
 #include <algorithm>
 #include <string>
 
-
 using namespace std;
 
-string reverseee(string a ){
+string reverseee(string a)
+{
     string ans;
     reverse(a.begin(), a.end());
-    for (int i =0; i<a.length(); i++){
+    for (int i = 0; i < a.length(); i++)
+    {
 
-    
         string word = "";
-    while(a[i]!=' ' && i<a.length()){
-        word = a[i] + word;
-        i++;
+        while (a[i] != ' ' && i < a.length())
+        {
+            word = a[i] + word;
+            i++;
+        }
+        if (word.length() > 0)
+        {
+            ans = ans + " " + word;
+        }
     }
-    if(word.length() > 0){
-        ans = ans + " " + word;
-    }
-    
 
-}
-
-/// to remove starting extra space......
+    /// to remove starting extra space......
     return ans.substr(1);
 }
 
-int main(){
+int main()
+{
 
-    // reverse words in string like " This is   what   "  -> "what is This" also remove extra space 
+    // reverse words in string like " This is   what   "  -> "what is This" also remove extra space
     string a;
     cout << "Enter a string : ";
     getline(cin, a);
