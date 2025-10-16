@@ -3,28 +3,31 @@
 #include <vector>
 #include <string>
 
-
-
 using namespace std;
 
-vector<char> compresss(vector<char> a){
+vector<char> compresss(vector<char> a)
+{
 
     int idx = 0;
     for (int i = 0; i < a.size();)
     {
         char ch = a[i];
         int count = 0;
-        while(i<a.size() && a[i] == ch){
+        while (i < a.size() && a[i] == ch)
+        {
             count++;
             i++;
         }
-        if(count == 1){
+        if (count == 1)
+        {
             a[idx++] = ch;
         }
-        else{
+        else
+        {
             a[idx++] = ch;
             string str = to_string(count);
-            for(char dig:str){
+            for (char dig : str)
+            {
                 a[idx++] = dig;
             }
         }
@@ -34,14 +37,16 @@ vector<char> compresss(vector<char> a){
     return a;
 }
 
-int main(){
+int main()
+{
 
-   vector<char> chars = {'a', 'a', 'b', 'b', 'c', 'c', 'c'};
-    
-    vector <char> b = compresss(chars);
+    vector<char> chars = {'a', 'a', 'b', 'b', 'c', 'c', 'c'};
+
+    vector<char> b = compresss(chars);
 
     cout << "The reverse string : ";
-    for(char val:b){
+    for (char val : b)
+    {
         cout << val << " ";
     }
 
