@@ -31,15 +31,19 @@ set<vector<int>> find3Sum(vector<int> arr)
     return s;
 }
 
-set<vector<int>> find3SumOptimized(vector<int> arr){
-   
+set<vector<int>> find3SumOptimized(vector<int> arr)
+{
+
     set<vector<int>> ans;
-    for (int i = 0; i < arr.size();i++){
+    for (int i = 0; i < arr.size(); i++)
+    {
         int tar = arr[i];
-         set<int> s;
-        for (int j = i + 1; j < arr.size();j++){
+        set<int> s;
+        for (int j = i + 1; j < arr.size(); j++)
+        {
             int third = -(tar + arr[j]);
-            if(s.find(third) != s.end()){
+            if (s.find(third) != s.end())
+            {
                 vector<int> trip = {arr[i], arr[j], third};
                 sort(trip.begin(), trip.end());
                 ans.insert(trip);
