@@ -18,7 +18,8 @@ void subSets(vector<int> &arr, vector<int> &ans, int i, vector<vector<int>> &all
     // exclude
     ans.pop_back();
     int idx = i + 1;
-    while(idx<arr.size()&& arr[idx] == arr[idx-1]){
+    while (idx < arr.size() && arr[idx] == arr[idx - 1])
+    {
         idx++;
     }
     subSets(arr, ans, idx, allSubSets);
