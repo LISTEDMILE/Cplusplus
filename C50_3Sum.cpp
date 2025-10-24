@@ -92,6 +92,10 @@ set<vector<int>> find3SumMostOptimized(vector<int> arr)
                 {
                     j++;
                 }
+                while (j < k && arr[k] == arr[k + 1])
+                {
+                    k--;
+                }
             }
         }
     }
