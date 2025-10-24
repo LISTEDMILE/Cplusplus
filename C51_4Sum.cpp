@@ -26,7 +26,9 @@ set<vector<int>> find4Sum(vector<int> &arr, int tar)
             int l = n - 1;
             while (k < l)
             {
-                int sum = arr[i] + arr[j] + arr[k] + arr[l];
+                // 4 max int ko add karenge to wo max int se jyada hoga obvious to long long lenge....
+                // long long me add karne ke liye pehle explicitely convert karenge long long me aur firs store karenge...
+                long long sum = (long long)arr[i] + (long long)arr[j] + (long long)arr[k] + (long long)arr[l];
                 if (sum > tar)
                 {
                     l--;
