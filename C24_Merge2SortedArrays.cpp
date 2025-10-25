@@ -9,11 +9,13 @@ vector<int> merge(vector<int> arrLarger, vector<int> arrSmaller)
     int idxS = arrSmaller.size() - 1;
     for (int curr = current; curr >= 0; curr--)
     {
-        if(arrLarger[idxL]>arrSmaller[idxS] || idxS<0){
+        if (arrLarger[idxL] > arrSmaller[idxS] || idxS < 0)
+        {
             arrLarger[curr] = arrLarger[idxL];
             idxL--;
         }
-        else {
+        else
+        {
             arrLarger[curr] = arrSmaller[idxS];
             idxS--;
         }

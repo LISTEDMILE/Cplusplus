@@ -23,7 +23,6 @@ int main()
 
     cout << "Max capacity : " << maxVol;
 
-
     // Optimized Approach.....
 
     // kya karenge ki sbse pehle 2 pointer type se first and last element ko point karenge unki capacity nikalenge fir agar left wala chota h to usko ek aage bhda denge aur agar right wala chota h to usko peeche le jaenge aisa tab tak karenge jab tak dono pointer ya to match na ho jae yha left wala right se right me aa jae har iteration me capacity nikalenge jo badi hogi assign ho jaegi.....
@@ -31,7 +30,8 @@ int main()
     maxVol = 0;
     int lp = 0;
     int rp = container.size() - 1;
-    while(lp<rp){
+    while (lp < rp)
+    {
         maxVol = max(maxVol, ((min(container[rp], container[lp])) * (rp - lp)));
         lp > rp ? rp-- : lp++;
     }

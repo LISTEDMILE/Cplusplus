@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-bool isValid(vector<int>& books, int mid, int studentCount)
+bool isValid(vector<int> &books, int mid, int studentCount)
 {
     int sum = 0;
     int count = 1;
@@ -29,7 +29,7 @@ bool isValid(vector<int>& books, int mid, int studentCount)
     return true;
 }
 
-int minOfMaxAllocation(vector<int>& books, int studentCount)
+int minOfMaxAllocation(vector<int> &books, int studentCount)
 {
     int sum = 0;
     int maxx = 0;
@@ -46,7 +46,7 @@ int minOfMaxAllocation(vector<int>& books, int studentCount)
         int mid = start + (end - start) / 2;
         if (isValid(books, mid, studentCount))
         {
-             ans = mid;
+            ans = mid;
             end = mid - 1;
         }
         else

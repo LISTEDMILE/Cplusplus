@@ -2,30 +2,35 @@
 #include <vector>
 using namespace std;
 
-
 /// in this the array first increase than decrease we have to find the peak element.....
 
-int Peak(vector <int > arr){
+int Peak(vector<int> arr)
+{
     // end element can't be peek......
     int start = 1;
     int end = arr.size() - 2;
-     while (start <= end){
+    while (start <= end)
+    {
         int mid = start + (end - start) / 2;
-        if(arr[mid] > arr[mid+1] && arr[mid] > arr[mid-1]){
+        if (arr[mid] > arr[mid + 1] && arr[mid] > arr[mid - 1])
+        {
             return mid;
         }
-        else if(arr[mid] > arr[mid-1]){
+        else if (arr[mid] > arr[mid - 1])
+        {
 
             start = mid + 1;
         }
-        else {
+        else
+        {
             end = mid - 1;
         }
     }
     return -1;
 }
 
-int main(){
+int main()
+{
 
     vector<int> arr = {1, 2, 4, 6, 9, 5, 3, 0};
     int ans = Peak(arr);

@@ -53,7 +53,8 @@ int main()
     // if we do ++ operation or -- operation on pointer than it will be adding to the pointing location and magnitude will be equal to the data type size like for int 4.... same goes with +1 if int will add 4, +4 +5 etc...operations......
 
     int arr[] = {1, 2, 3, 4, 5, 5, 6};
-    cout << "\n" << *arr << "\t" << *(arr + 1) << "\t" << *(arr + 2) << "\n";
+    cout << "\n"
+         << *arr << "\t" << *(arr + 1) << "\t" << *(arr + 2) << "\n";
 
     /// in ptr we can perform - operation it will give no of block of data type between both....
 
@@ -64,9 +65,8 @@ int main()
 
     // access array using external pointer...
     int *ref = arr;
-    cout << "\n" << *ref << "\t" << *(ref + 1) << "\t" << *(ref + 2) << "\n";
-
-
+    cout << "\n"
+         << *ref << "\t" << *(ref + 1) << "\t" << *(ref + 2) << "\n";
 
     return 0;
 }

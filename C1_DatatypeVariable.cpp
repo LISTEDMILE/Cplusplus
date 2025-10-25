@@ -2,9 +2,10 @@
 
 using namespace std;
 
-int main(){
-    //endl is for next line 
-    // can use \n also (prefer)
+int main()
+{
+    // endl is for next line
+    //  can use \n also (prefer)
     cout << "Cout" << endl;
     cout << "is for printing \n";
 
@@ -22,12 +23,11 @@ int main(){
     cout << PI << "\n";
 
     bool what = true;
-    //return 1 for true 0 for false
+    // return 1 for true 0 for false
     cout << what << "\n";
 
-
-    //typeCasting
-    //conversion -> small data type se larger me convert compiler khud kar skta h
+    // typeCasting
+    // conversion -> small data type se larger me convert compiler khud kar skta h
     char g = 'A';
     int gInt = g;
     cout << "g = " << g << " , gInt = " << gInt << "\n";
@@ -35,8 +35,7 @@ int main(){
     double b = a;
     cout << "a = " << a << " , b = " << b << "\n";
 
-
-    //casting -> larger se smaller explicitely karna padega user ko...
+    // casting -> larger se smaller explicitely karna padega user ko...
     double c = 20.333;
     int d = c;
     cout << "c = " << c << " , d = " << d << "\n";
@@ -45,7 +44,7 @@ int main(){
 
     // if we want in some other data type ans we have to type cast anyone
     cout << "With type cast " << (5 / double(2)) << "\n";
-    cout << "Without type cast " << (5 /2) << "\n";
+    cout << "Without type cast " << (5 / 2) << "\n";
 
     return 0;
 }

@@ -52,38 +52,41 @@ int majOp(vector<int> nums)
     return -1;
 }
 
-
-int majMVA(vector<int> nums){
+int majMVA(vector<int> nums)
+{
     int freq = 0;
     int ans = nums[0];
-    for (int val: nums){
-        if(freq == 0){
+    for (int val : nums)
+    {
+        if (freq == 0)
+        {
             ans = val;
         }
-        if(ans == val){
+        if (ans == val)
+        {
             freq++;
         }
-        else{
+        else
+        {
             freq--;
         }
-       
-       
     }
 
     // if we have to return -1 if not majority element than here we have one more step...
     int count;
-    for (int val : nums){
-        if(val == ans ){
+    for (int val : nums)
+    {
+        if (val == ans)
+        {
             count++;
         }
     }
-    if(count>nums.size()/2){
+    if (count > nums.size() / 2)
+    {
         return ans;
-    }    
+    }
     return -1;
-
 }
-
 
 int main()
 {
