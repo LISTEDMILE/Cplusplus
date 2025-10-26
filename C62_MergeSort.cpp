@@ -49,17 +49,11 @@ void mergeSort(vector<int> &arr, int st, int end) // O(log(n))
     }
 }
 
-vector<int> Sort(vector<int> &arr)
-{
-    mergeSort(arr, 0, arr.size() - 1);
-    return arr;
-}
-
 int main()
 {
 
     vector<int> arr = {3, 4, 2, 5, 6, 2, 4};
-    vector<int> ans = Sort(arr);
+    mergeSort(arr, 0, arr.size() - 1);
     for (int val : arr)
     {
         cout << val << " ";
