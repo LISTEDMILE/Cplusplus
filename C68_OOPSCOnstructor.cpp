@@ -38,6 +38,9 @@ public:
     // 3. copy
     // used to copy one object ot another...
     // if not given the copy constructor this way it will copy the whole obj as it is ..... similar to manual..
+
+    // ab copy karne ke do tareeke h pehla
+    // - sirf data copy karo aur ek proper nya obj with same value create kardo. jaiye is ex me => shallow copy - matlab jo value h as it is copy hongi like is Teacher me val thi as itis copy ho gyi. ya Student me ek ptr bhi h wo bhi aise hi copy ho gya matlab if us ptr pe change kiya to jaise hmne s1 ko s2 me copy kiya to agar s2 me change kiya ptr me to s1 me bhi update hoga khud se hi chahe s1 we have not touched because they both are pointing the same loc......
     Teacher(Teacher &obj)
     { // pass by reference
         this->name = obj.name;
@@ -65,6 +68,27 @@ public:
         cout << "dept : " << dept << endl;
         cout << "subject : " << subject << endl;
         cout << "salary : " << salary << endl;
+    }
+};
+
+class Student
+{
+public:
+    string name;
+    // cgpa pointer
+    double *cgpaPointer;
+    Student(string name, double cgpa)
+    {
+        this->name = name;
+        // pointer ki loc pe double ki memory allocate kardi dynamically.
+        // ye memory heap me allocate hori h kyoki dynamic allocation heap se hi hota h..
+        cgpaPointer = new double;
+        *cgpaPointer = cgpa;
+    }
+    void getInfo()
+    {
+        cout << "name : " << name << endl;
+        cout << "cgpa : " << *cgpaPointer << endl;
     }
 };
 
@@ -98,5 +122,15 @@ int main()
     Teacher t3(t1);
     t3.getInfo();
     cout << endl;
+
+    Student s1("Rahul", 10);
+    // default copy constructor..
+    Student s2(s1);
+    s2.getInfo();
+
+    *s2.cgpaPointer = 9.9;
+    s2.getInfo();
+    s1.getInfo();
+
     return 0;
 }
