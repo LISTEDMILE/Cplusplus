@@ -40,7 +40,9 @@ public:
     // if not given the copy constructor this way it will copy the whole obj as it is ..... similar to manual..
 
     // ab copy karne ke do tareeke h pehla
-    // - sirf data copy karo aur ek proper nya obj with same value create kardo. jaiye is ex me => shallow copy - matlab jo value h as it is copy hongi like is Teacher me val thi as itis copy ho gyi. ya Student me ek ptr bhi h wo bhi aise hi copy ho gya matlab if us ptr pe change kiya to jaise hmne s1 ko s2 me copy kiya to agar s2 me change kiya ptr me to s1 me bhi update hoga khud se hi chahe s1 we have not touched because they both are pointing the same loc......
+    // - sirf data copy karo aur ek proper nya obj with same value create kardo. jaiye is ex me => shallow copy - matlab jo value h as it is copy hongi like is Teacher me val thi as it is copy ho gyi. ya Student me ek ptr bhi h wo bhi aise hi copy ho gya matlab if us ptr pe change kiya to jaise hmne s1 ko s2 me copy kiya to agar s2 me change kiya ptr me to s1 me bhi update hoga khud se hi chahe s1 we have not touched because they both are pointing the same loc......
+
+    // - second -- > Deep copy -> isme jo pointers bhi copy honge na to ptr pe value copy hogi pointers nye hi bnenge...
     Teacher(Teacher &obj)
     { // pass by reference
         this->name = obj.name;
@@ -83,7 +85,12 @@ public:
         // pointer ki loc pe double ki memory allocate kardi dynamically.
         // ye memory heap me allocate hori h kyoki dynamic allocation heap se hi hota h..
         cgpaPointer = new double;
+
+        // shallow copy..
         *cgpaPointer = cgpa;
+
+        // for deep copy..
+        // *cgpaPointer = *cgpa;
     }
     void getInfo()
     {
