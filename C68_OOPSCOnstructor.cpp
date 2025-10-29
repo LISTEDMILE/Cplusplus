@@ -94,7 +94,8 @@ public:
     }
     // agar hm object delete karenge to poora object khud hi delete ho jaega but jo dynamically allocate ki h memory uska kya uske liye - delete name of ptr;
     // ~ (name of class) used for destructure like structre run at run time destructure run at deletion. by default hota hi h just like constructure..
-    ~Student(){
+    ~Student()
+    {
         cout << "Deleted everything";
         delete cgpaPointer;
     }
