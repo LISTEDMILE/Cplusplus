@@ -37,6 +37,8 @@ public:
 int main()
 {
 
+    /// rest all types of inheritence in hybrid inheritence.....
+
     Student s1;
     s1.name = "aakash";
     s1.age = 20;
