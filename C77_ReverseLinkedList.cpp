@@ -42,11 +42,13 @@ public:
         }
     }
 
-    void reverse(){
+    void reverse()
+    {
         Node *nextt = NULL;
         Node *current = head;
         Node *prev = NULL;
-        while(current!=NULL){
+        while (current != NULL)
+        {
 
             nextt = current->next;
             current->next = prev;
@@ -73,7 +75,6 @@ int main()
 {
 
     List ll;
-    
 
     ll.push_back(7);
     ll.push_back(4);
