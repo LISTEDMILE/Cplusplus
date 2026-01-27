@@ -1,11 +1,6 @@
 #include <iostream>
 
 using namespace std;
-
-// we have to print the middle element
-// middle if odd
-// 2nd of 2 middles if size even
-
 class Node
 {
 public:
@@ -56,26 +51,7 @@ public:
         cout << "NULL";
     }
 
-    // brute force
-    int middleElementBruteForce()
-    {
-        Node *current = head;
-        int size = 0;
-        while (current != NULL)
-        {
-            current = current->next;
-            size++;
-        }
-        current = head;
-        for (int i = 0; i < size / 2; i++)
-        {
-            current = current->next;
-        }
-        return current->data;
-    }
-
-    // slow fast approach
-    int middleBySlowFast()
+    bool isCyclic()
     {
         Node *slow = head;
         Node *fast = head;
@@ -83,8 +59,12 @@ public:
         {
             slow = slow->next;
             fast = fast->next->next;
+            if (slow == fast)
+            {
+                return true;
+            }
         }
-        return (slow->data);
+        return false;
     }
 };
 
@@ -103,10 +83,16 @@ int main()
     ll.push_back(5);
 
     ll.display();
-    int ansBruteForce = ll.middleElementBruteForce();
-    cout << "\n\nMiddle Element (BruteForce) = " << ansBruteForce;
 
-    int ansSlowFast = ll.middleBySlowFast();
-    cout << "\n\nMiddle Element (SlowFast) = " << ansSlowFast;
+    bool isCyclicc = ll.isCyclic();
+    if (isCyclicc)
+    {
+        cout << "\nThe list is cyclic.";
+    }
+    else
+    {
+        cout << "\nThe list is not cyclic.";
+    }
+
     return 0;
 }
