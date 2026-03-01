@@ -95,7 +95,7 @@ int AreaOptimalTwoPointers(vector<int> arr)
         {
             ans += rmax - arr[r];
             r--;
-        } 
+        }
     }
     return ans;
 }
