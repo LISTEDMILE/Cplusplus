@@ -8,7 +8,7 @@ vector<int> prevSmaller(vector<int> arr)
 {
 
     // same as nextGreater .....
-    
+
     stack<int> st;
     vector<int> ans(arr.size(), 0);
 

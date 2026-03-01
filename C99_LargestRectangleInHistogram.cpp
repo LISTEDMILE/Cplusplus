@@ -60,7 +60,7 @@ vector<int> findLeftNearest(vector<int> arr)
 int largestRectangle(vector<int> heights)
 {
 
-    // hme kya karna h ki hme find karna max area wala rectangle ab uske liye 
+    // hme kya karna h ki hme find karna max area wala rectangle ab uske liye
     vector<int> rightNearestSmaller = findRightNearest(heights);
     vector<int> leftNearestSmaller = findLeftNearest(heights);
 
