@@ -61,8 +61,7 @@ int diameterOfTree(Node *root)
     return max(leftDiameter, max(rightDiameter, rootContainingDia));
 }
 
-
-int diameterOfTreeOptimal(Node *root ,int &ans)
+int diameterOfTreeOptimal(Node *root, int &ans)
 {
 
     if (root == NULL)
@@ -77,18 +76,16 @@ int diameterOfTreeOptimal(Node *root ,int &ans)
     return max(heightLeftSubTree, heightRightSubTree) + 1;
 }
 
-
 int main()
 {
 
     // diameter is the distance between any two nodes to hme max distance nikalna h between 2 nodes..
-   
+
     vector<int> arr = {1, 2, -1, -1, 3, 4, -1, -1, 5, -1, -1};
     int idx = -1;
     Node *root = buildTree(arr, idx);
 
-
-     // to ab dimag lgaya ki
+    // to ab dimag lgaya ki
     // 1. ya to root se hoti hui jae apni deameter
     // 2. ya to left subtree me without root ke diameter ho ulta v ki tarah.
     // 3. ya to right me ho without root.
@@ -102,14 +99,12 @@ int main()
     int diameter = diameterOfTree(root);
     cout << "Diameter of tree : " << diameter;
 
-
-
     // optimatll......
 
     // jo hmara diameter left aur right wala h agar dhyan se soche to wo bhi kisi node ke liye to with root node wala hi deameter h to hm simply diameter ko leftHeight + rightHeight bol skte h us node ke liye aur agar global nikalna h to har node ka nikalke max return kra skte h
     // ab iske liye hmne jo height calculate karne ka recursive fn hota h wo use kiya just ek change ki har iteration pe left and right height ko add karke purane ans se compare karke max ans me store kara rhe h baki sab same....
     int diameterOptimal = 0;
-    diameterOfTreeOptimal(root,diameterOptimal);
+    diameterOfTreeOptimal(root, diameterOptimal);
     cout << "\nDiameter of tree Optimal : " << diameterOptimal;
     return 0;
 }
