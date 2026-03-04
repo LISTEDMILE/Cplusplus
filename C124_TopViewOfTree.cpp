@@ -58,6 +58,8 @@ void TopViewOfTree(Node *parent)
     int currHorizontalDistance = 0;
     q.push({parent, currHorizontalDistance});
 
+    // ek while loop h aur unordered map nhi ordered map h to map ki time complexity O(long(n))
+    // to TC => O(nlog(n))....
     while (!q.empty())
     {
         Node *curr = q.front().first;
