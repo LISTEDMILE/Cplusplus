@@ -71,15 +71,32 @@ public:
         return false;
     }
 
-    stack<int> FindTopologicalOrder()
+    void FindTopologicalOrder()
     {
         stack<int> s;
         vector<bool> visited(Size, false);
-        TopologicalOrder(visited, s, 0);
-        return s;
+        if (DetectCycleDirectedGraph())
+            cout << "The graph has cycle";
+
+        else
+        {
+            for (int i = 0; i < Size; i++)
+            {
+                if (!visited[i])
+                    TopologicalOrder(visited, s, 0);
+            }
+
+            cout << "Order : ";
+            FindTopologicalOrder();
+            while (!s.empty())
+            {
+                cout << s.top() << ' ';
+                s.pop();
+            }
+        }
     }
 
-    void TopologicalOrder(vector<bool> visited, stack<int> &s, int u)
+    void TopologicalOrder(vector<bool> &visited, stack<int> &s, int u)
     {
         // dekho topolocial order ka matlab h ki if u -> v h graph me to u hmesha v se pehle aaega poore sequence me to jitne bhi u->v h sab u apne apne v se pehle aaenge....
 
@@ -114,18 +131,6 @@ int main()
     g.addEdge(3, 4);
     g.addEdge(4, 5);
 
-    if (g.DetectCycleDirectedGraph())
-        cout << "The graph has cycle";
-    else
-    {
-        cout << "Order : ";
-        stack<int> s = g.FindTopologicalOrder();
-        while (!s.empty())
-        {
-            cout << s.top() << ' ';
-            s.pop();
-        }
-    }
-
+    g.FindTopologicalOrder();
     return 0;
 }
