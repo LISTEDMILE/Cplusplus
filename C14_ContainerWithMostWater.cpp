@@ -33,7 +33,10 @@ int main()
     while (lp < rp)
     {
         maxVol = max(maxVol, ((min(container[rp], container[lp])) * (rp - lp)));
-        lp > rp ? rp-- : lp++;
+        if (container[lp] < container[rp])
+            lp++;
+        else
+            rp--;
     }
 
     cout << "\nMax Capacity by 2 Pointer Approach : " << maxVol;

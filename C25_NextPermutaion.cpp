@@ -44,7 +44,7 @@ vector<int> lexicographicalNext(vector<int> arr)
 int main()
 {
 
-    // lexicographically next arrange ment matlab jaise 1 2 3 h to iske sare arrangements aur order me like 123 se bda 132 se bda 213 aise me se hme next wala dena h like 123 ka 132 .......
+    // lexicographically next arrangement matlab jaise 1 2 3 h to iske sare arrangements aur order me like 123 se bda 132 se bda 213 aise me se hme next wala dena h like 123 ka 132 .......
     vector<int> arr = {1, 2, 3, 5, 9, 8};
     vector<int> ans = lexicographicalNext(arr);
 
