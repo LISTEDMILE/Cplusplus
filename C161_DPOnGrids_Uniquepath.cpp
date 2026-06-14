@@ -67,18 +67,16 @@ int uniquePathOptimalTabulation(int row, int col, vector<vector<int>> &p)
                 p[i][j] = left + up;
             }
         }
-        
     }
     return p[row][col];
 }
 
-
 int uniquePathMostOptimized(int row, int col)
 {
-    vector<int> prev(col+1, 0);
+    vector<int> prev(col + 1, 0);
     for (int i = 0; i <= row; i++)
     {
-        vector<int> temp(col+1, 0);
+        vector<int> temp(col + 1, 0);
         for (int j = 0; j <= col; j++)
         {
             if (i == 0 && j == 0)
@@ -87,16 +85,18 @@ int uniquePathMostOptimized(int row, int col)
             }
             else
             {
-                if(j == 0){
+                if (j == 0)
+                {
                     temp[j] = prev[j];
                 }
-                else{
-                temp[j] = prev[j] + temp[j - 1];
-            }
+                else
+                {
+                    temp[j] = prev[j] + temp[j - 1];
+                }
             }
         }
         prev = temp;
-        }
+    }
     return prev[col];
 }
 
@@ -112,11 +112,11 @@ int main()
 
     cout << "\nNo. of unique paths (Optimal) : " << uniquePathOptimalMemoization(i, j, p);
 
-    p = vector<vector<int>>(i+1, vector<int>(j+1, -1));
+    p = vector<vector<int>>(i + 1, vector<int>(j + 1, -1));
 
     cout << "\nNo. of unique paths (Tabulation) : " << uniquePathOptimalTabulation(i, j, p);
 
-        cout << "\nNo. of unique paths (Most Optimized) : " << uniquePathMostOptimized(i, j);
+    cout << "\nNo. of unique paths (Most Optimized) : " << uniquePathMostOptimized(i, j);
 
     return 0;
 }
