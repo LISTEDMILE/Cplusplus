@@ -113,6 +113,7 @@ bool subsetSumMostOptimized(vector<int> &arr, int target)
     vector<bool> prev(target + 1, false);
 
     prev[0] = true;
+    if(arr[0]<=target)
     prev[arr[0]] = true;
 
     for (int i = 1; i < n; i++)
@@ -145,6 +146,7 @@ bool subsetSumMostOptimizedExtraByMe(vector<int> &arr, int target)
     vector<bool> prev(target + 1, false);
 
     prev[0] = true;
+    if(arr[0]<=target)
     prev[arr[0]] = true;
 
     for (int i = 1; i < n; i++)
