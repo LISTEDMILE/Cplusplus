@@ -33,8 +33,8 @@ int main()
 {
 
     /// searching take sorted array but this time the array is sorted like rowwise and colwise  ....
-    vector<vector<int>> arr = {{2, 5, 6}, {3, 7, 8}, {19, 12, 66}};
-    int target = 3;
+    vector<vector<int>> arr = {{2, 5, 6}, {3, 7, 8}, {19, 21, 66}};
+    int target = 63;
 
     bool ans = findEle(arr, target);
     if (ans)
