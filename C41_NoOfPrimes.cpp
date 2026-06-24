@@ -4,23 +4,23 @@
 
 using namespace std;
 
-vector<bool> noOfPrime(int a)
-{
-    vector<bool> test(a + 1, true);
-    int count = 0;
-    for (int i = 2; i < a; i++)
+    vector<bool> noOfPrime(int a)
     {
-        if (test[i])
+        vector<bool> test(a + 1, true);
+        int count = 0;
+        for (int i = 2; i < a; i++)
         {
-            count++;
-            for (int j = i * 2; j < a; j = j + 1)
+            if (test[i])
             {
-                test[j] = false;
+                count++;
+                for (int j = i * 2; j < a; j = j + i)
+                {
+                    test[j] = false;
+                }
             }
         }
+        return test;
     }
-    return test;
-}
 
 bool isPrime(int a)
 {

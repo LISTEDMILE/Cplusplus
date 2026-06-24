@@ -44,7 +44,7 @@ int main()
 
     vector<char> b = compresss(chars);
 
-    cout << "The reverse string : ";
+    cout << "The Compressed string : ";
     for (char val : b)
     {
         cout << val << " ";
