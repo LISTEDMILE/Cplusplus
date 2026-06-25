@@ -23,7 +23,7 @@ int findDup(vector<int> arr)
 int slowFastApproach(vector<int> arr)
 {
     // kya karenge do pointers lenge aur unko traverse kataenge jo value h array me wo next pointer bnega fir jo wha value h wo..
-    int slow = arr[0], fast = arr[0];
+    int slow = 0, fast = 0;
     // slow ko +1 se bhadaenge and fast ko +2 se jab we meet karenge end.
     do
     {
@@ -32,6 +32,7 @@ int slowFastApproach(vector<int> arr)
     } while (slow != fast);
 
     // same step firse but ab same pace se bhadenge to jha meet karenge wo cycle ka staring point hoga to whi duplicated value hogiii.....
+    slow = 0;
     while (slow != fast)
     {
         slow = arr[slow];
