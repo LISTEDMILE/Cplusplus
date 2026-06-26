@@ -5,56 +5,24 @@ using namespace std;
 
 bool isSafe(vector<vector<int>> &board, int row, int col, int n)
 {
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i <= row; i++)
     {
-        // horizontal
-        if (board[row][i] == 1)
-        {
+        if (board[i][col] == 'Q')
             return false;
-        }
-
-        // vertical
-        else if (board[i][col] == 1)
-        {
-            return false;
-        }
     }
 
-    // left top diagonal
     for (int i = row, j = col; i >= 0 && j >= 0; i--, j--)
     {
-        if (board[i][j] == 1)
-        {
+        if (board[i][j] == 'Q')
             return false;
-        }
     }
 
-    // right top diagonal
     for (int i = row, j = col; i >= 0 && j < n; i--, j++)
     {
-        if (board[i][j] == 1)
-        {
+        if (board[i][j] == 'Q')
             return false;
-        }
     }
 
-    // left bottom diagonal
-    for (int i = row, j = col; i < n && j >= 0; i++, j--)
-    {
-        if (board[i][j] == 1)
-        {
-            return false;
-        }
-    }
-
-    // right bottom diagonal
-    for (int i = row, j = col; i < n && j < n; i++, j++)
-    {
-        if (board[i][j] == 1)
-        {
-            return false;
-        }
-    }
     return true;
 }
 
