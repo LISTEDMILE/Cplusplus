@@ -8,7 +8,8 @@ using namespace std;
 //------------------------------------------------------------
 // 1. Recursion
 //------------------------------------------------------------
-bool validStringRecursion(string &s, int idx, int count) {
+bool validStringRecursion(string &s, int idx, int count)
+{
 
     if (count < 0)
         return false;
@@ -32,7 +33,8 @@ bool validStringRecursion(string &s, int idx, int count) {
 // 2. Memoization
 //------------------------------------------------------------
 bool validStringMemo(string &s, int idx, int count,
-                     vector<vector<int>> &dp) {
+                     vector<vector<int>> &dp)
+{
 
     if (count < 0)
         return false;
@@ -62,22 +64,27 @@ bool validStringMemo(string &s, int idx, int count,
 //------------------------------------------------------------
 // 3. Greedy (Optimal)
 //------------------------------------------------------------
-bool validStringGreedy(string &s) {
+bool validStringGreedy(string &s)
+{
 
     int low = 0;
     int high = 0;
 
-    for (char ch : s) {
+    for (char ch : s)
+    {
 
-        if (ch == '(') {
+        if (ch == '(')
+        {
             low++;
             high++;
         }
-        else if (ch == ')') {
+        else if (ch == ')')
+        {
             low--;
             high--;
         }
-        else { // '*'
+        else
+        { // '*'
             low--;
             high++;
         }
@@ -94,7 +101,8 @@ bool validStringGreedy(string &s) {
 //------------------------------------------------------------
 // Main
 //------------------------------------------------------------
-int main() {
+int main()
+{
 
     string s = "((*)(**(()*)";
 
