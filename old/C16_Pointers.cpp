@@ -31,7 +31,9 @@ int main()
     cout << "\n"
          << &a << "\n"
          << ptr << "\n"
-         << *ptr2 << "\n";
+         << *ptr2 << "\n"
+    << ptr2 << endl
+    << **ptr2 << endl;
 
     // * is also used for dereferencing means to extract value at pointer location...
 
